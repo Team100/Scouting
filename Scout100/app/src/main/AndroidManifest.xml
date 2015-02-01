@@ -32,6 +32,9 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="org.team100.scout100.MainActivity" />
         </activity>
+        <activity android:name=".startScreen"
+                  android:label="@string/start_screen">
+        </activity>
     </application>
 
 </manifest>
