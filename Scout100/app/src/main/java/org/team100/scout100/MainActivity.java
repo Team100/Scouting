@@ -132,6 +132,14 @@ public class MainActivity extends ActionBarActivity {
         startActivity(intent);
     }
 
+    public void ButtonToScout (View view) {
+        
+    }
+
+  //  public void adAdRoRo (View view){
+   //     createToast("carPOOL?");
+   // }
+
     public void discoverDevices(View view) {
         mManager.discoverPeers(mChannel, new WifiP2pManager.ActionListener() {
             @Override

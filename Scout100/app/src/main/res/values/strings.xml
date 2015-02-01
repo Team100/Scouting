@@ -14,5 +14,9 @@
     <string name="send_log">No Devices...</string>
     <string name="title_activity_display_message">DisplayMessageActivity</string>
     <string name="discover_devices">Discover Devices</string>
+    <string name="title_activity_ad_adand_ro_ro_butt_butt">AdAdandRoRoButtButt</string>
+    <string name="done">Done</string>
+    <string name="editText2_hint">KeyBOARD?</string>
+    <string name="title_activity_scouting">Scouting</string>
 
 </resources>
