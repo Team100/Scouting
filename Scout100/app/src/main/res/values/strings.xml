@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Scout100</string>
+    <string name="hello_world">Hello Team 100!</string>
+    <string name="action_settings">Settings</string>
+    <string name="options_01">Orange</string>
+    <string name="options_02">Blue</string>
+    <string name="options_03">Pink</string>
+    <string name="refresh_devices">Send</string>
+    <string name="radio_color_pink">Pink</string>
+    <string name="radio_color_blue">Blue</string>
+    <string name="radio_color_orange">Orange</string>
+    <string name="send_log">No Devices...</string>
+    <string name="title_activity_display_message">DisplayMessageActivity</string>
+    <string name="discover_devices">Discover Devices</string>
+
+</resources>
