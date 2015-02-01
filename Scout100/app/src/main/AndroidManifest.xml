@@ -35,6 +35,13 @@
         <activity android:name=".startScreen"
                   android:label="@string/start_screen">
         </activity>
+        <activity android:name=".Scout"
+            android:label="@string/scout"
+            android:parentActivityName=".startScreen">
+             </activity>
+        <activity android:name=".Scouting"
+            android:label="@string/scouting">
+            </activity>
     </application>
 
 </manifest>

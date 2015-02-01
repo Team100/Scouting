@@ -23,5 +23,7 @@
     <string name="start_scout_button">Start Scouting!</string>
     <string name="help">Help</string>
     <string name="start_screen">Start Screen</string>
+    <string name="scout">Scout</string>
+    <string name="scouting">Scouting</string>
 
 </resources>

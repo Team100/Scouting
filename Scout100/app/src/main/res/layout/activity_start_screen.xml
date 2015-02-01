@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:textSize="@dimen/start_screen_heading"
         android:padding="@dimen/team_profiles_button_padding"
-        android:textColor="#ff4a01"
+        android:textColor="#ffff4a01"
         android:id="@+id/button3"
         android:layout_above="@+id/textView3"
         android:layout_centerHorizontal="true"
