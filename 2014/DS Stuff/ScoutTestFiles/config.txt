@@ -1,0 +1,170 @@
+Configuration
+	InputFile: DS.txt # The input file of match numbers and teams playing.
+	Foo: file.out # The file to put the output of the scouting.
+
+Screens
+	1:HomeScreen
+	2:AutoScreen
+	3:TeleScreen
+	4:TeleScreen2
+
+HomeScreen
+	name: Home
+	ShowScoutingInitial
+
+AutoScreen
+	name: Auto
+	PlainText
+		x:0
+		y:5
+		value:"No Show/Dead Bot"
+	Checkbox
+		x:16
+		y:4
+		name:Dead_Bot
+	PlainText
+		x:0
+		y:8
+		value:"Totes Scored"
+	Counter
+		x:13
+		y:8
+		increment:x
+		name:Auto_ToteScored
+	PlainText
+		x:18
+		y:8
+		value:"Stack?"
+	Checkbox
+		x:24
+		y:7
+		name:Auto_Stack
+	PlainText
+		x:0
+		y:11
+		value:"Container Scored?"
+	Checkbox
+		x:18
+		y:10
+		name:Auto_Container
+	PlainText
+		x:0
+		y:13
+		value:"Bot in Auto Zone?"
+	Checkbox
+		x:18
+		y:12
+		name:Robot_Set
+
+
+TeleScreen
+	name: Tele
+	PlainText
+		x:0
+		y:5
+		value:"Totes Scored:"
+	Counter
+		x:13
+		y:5
+		increment:x
+		name:Tele_ToteScored
+	PlainText
+		x:0
+		y:7
+		value:"Bins Stacked:"
+	Counter
+		x:13
+		y:7
+		increment:y
+		name:Tele_BinStacked
+	PlainText
+		x:0
+		y:9
+		value:"Highest Bin Level:"
+	Counter
+		x:18
+		y:9
+		increment:a
+		name:Tele_BinLevel
+	PlainText
+		x:0
+		y:11
+		value:"Puts Litter in Bin?"
+	Checkbox
+		x:20
+		y:10
+		name:Put_Litter
+	PlainText
+		x:0
+		y:13
+		value:"Litter in Landfill:"
+	Counter
+		x:20
+		y:13
+		increment:b
+		name:Landfill_Litter
+	PlainText
+		x:0
+		y:15
+		value:"Coopertition Scored:"
+	Counter
+		x:20
+		y:15
+		increment:x
+		name:Coopertition_Scored
+	PlainText
+		x:13
+		y:18
+		value:"Stack?"
+	Checkbox
+		x:20
+		y:17
+		name:Coopertition_Stack
+
+TeleScreen2
+	name: Tele2
+	PlainText
+		x:0
+		y:5
+		value:"Fouls"
+	Counter
+		x:6
+		y:5
+		increment:x
+		name:Fouls
+	PlainText
+		x:0
+		y:7
+		value:"Knocked Over Stacks"
+	Counter
+		x:20
+		y:7
+		increment:x
+		name:Stacks_Knocked
+	PlainText
+		x:0
+		y:9
+		value:"Malfunction?"
+	Checkbox
+		x:12
+		y:8
+		name:Malfunction
+	PlainText
+		x:0
+		y:12
+		value:"Driver Skill"
+	Rating
+		x:12
+		y:12
+		name:Driver_Rating
+	PlainText
+		x:0
+		y:14
+		value:"Pickup"
+	Rating
+		x:12
+		y:14
+		name:Pickup_Rating
+	Finish
+		x:24
+		y:20

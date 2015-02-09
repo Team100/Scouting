@@ -1,0 +1,245 @@
+Configuration
+	InputFile: DS.txt # The input file of match numbers and teams playing.
+	Foo: file.out # The file to put the output of the scouting.
+
+Screens
+	1:HomeScreen
+	2:AutoScreen
+	3:TeleScreen
+	4:TeleScreen2
+
+HomeScreen
+	name: Home
+	ShowScoutingInitial
+
+AutoScreen
+	name: Auto
+	PlainText
+		x:0
+		y:5
+		value:"No Show/Dead Bot"
+	Checkbox
+		x:16
+		y:4
+		name:Dead_Bot
+	PlainText
+		x:0
+		y:7
+		value:"Low"
+	Counter
+		x:4
+		y:7
+		increment:x
+		name:Auto_Low
+	PlainText
+		x:9
+		y:7
+		value:"Low Hot"
+	Counter
+		x:17
+		y:7
+		increment:y
+		name:Auto_Low_Hot
+	PlainText
+		x:0
+		y:9
+		value:"High"
+	Counter
+		x:4
+		y:9
+		increment:a
+		name:Auto_High
+	PlainText
+		x:9
+		y:9
+		value:"High Hot"
+	Counter
+		x:17
+		y:9
+		increment:b
+		name:Auto_High_Hot
+	PlainText
+		x:0
+		y:12
+		value:"Mobility"
+	Checkbox
+		x:8 
+		y:11
+		name:Auto_Mobility
+	PlainText
+		x:0
+		y:14
+		value:"Missed Low"
+	Counter
+		x:11
+		y:14
+		increment:L
+		name:Auto_Missed_Low
+	PlainText
+		x:0
+		y:16
+		value:"Missed High"
+	Counter
+		x:12
+		y:16
+		increment:R
+		name:Auto_Missed_High
+
+TeleScreen
+	name: Tele
+	PlainText
+		x:0
+		y:5
+		value:"Low:"
+	Counter
+		x:4
+		y:5
+		increment:x
+		name:Tele_Low
+	PlainText
+		x:9
+		y:5
+		value:"Low Miss:"
+	Counter
+		x:18
+		y:5
+		increment:y
+		name:Tele_Low_Miss
+	PlainText
+		x:0
+		y:7
+		value:"High:"
+	Counter
+		x:5
+		y:7
+		increment:a
+		name:Tele_High
+	PlainText
+		x:10
+		y:7
+		value:"High Miss:"
+	Counter
+		x:20
+		y:7
+		increment:b
+		name:Tele_High_Miss
+	PlainText
+		x:0
+		y:9
+		value:"2 Assist:"
+	Counter
+		x:9
+		y:9
+		increment:a
+		name:2_Assist
+	PlainText
+		x:14
+		y:9
+		value:"3 Assist:"
+	Counter
+		x:23
+		y:9
+		increment:b
+		name:3_Assist
+	PlainText
+		x:0
+		y:11
+		value:"Possession:"
+	Rating
+		x:11
+		y:11
+		name:Possession_Rating
+	PlainText
+		x:0
+		y:13
+		value:"Truss"
+	Counter
+		x:6
+		y:13
+		increment:L
+		name:Truss
+	PlainText
+		x:0
+		y:15
+		value:"Catch"
+	Counter
+		x:6
+		y:15
+		increment:R
+		name:Catch
+	PlainText
+		x:10
+		y:17
+		value:"Robot Job"
+	DropDown
+		x:1
+		y:19
+		1:"       Offensive Robot    "
+		2:"       Defensive Robot    "
+		3:"Offensive and Defensive Robot"
+		4:"       Did Nothing     "
+		name:Robot_Job
+
+TeleScreen2
+	name: Tele2
+	PlainText
+		x:0
+		y:5
+		value:"Pass to Human?"
+	Checkbox
+		x:15
+		y:4
+		name:Human_Pass
+	PlainText
+		x:0
+		y:7
+		value:"Goal Defense?"
+	Checkbox
+		x:15
+		y:6
+		name:Goal_Defense
+	PlainText
+		x:0
+		y:9
+		value:"Fouls"
+	Counter
+		x:6
+		y:9
+		increment:x
+		name:Fouls
+	PlainText
+		x:12
+		y:9
+		value:"Tech Fouls"
+	Counter
+		x:23
+		y:9
+		increment:y
+		name:Tech_Fouls
+	PlainText
+		x:0
+		y:12
+		value:"Driver Skill"
+	Rating
+		x:12
+		y:12
+		name:Driver_Rating
+	PlainText
+		x:0
+		y:14
+		value:"Defense"
+	Rating
+		x:12
+		y:14
+		name:Defense_Rating
+	PlainText
+		x:0
+		y:16
+		value:"Pickup"
+	Rating
+		x:12
+		y:16
+		name:Pickup_Rating
+	Finish
+		x:24
+		y:20

@@ -1,0 +1,5 @@
+Bins to rc
+Landmark?
+Highest Bin Level
+Puts Litter ----> Robot Recycles Litter
+Litter in Bin? - No more
