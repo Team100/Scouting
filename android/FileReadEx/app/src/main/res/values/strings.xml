@@ -2,7 +2,11 @@
 <resources>
 
     <string name="app_name">FileReadEx</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="team">Team 100</string>
     <string name="action_settings">Settings</string>
+    <string name="write">WRITE</string>
+    <string name="read">READ</string>
+    <string name="title_activity_read_write">ReadWrite</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>
