@@ -1,14 +1,49 @@
 package com.example.brendaporter.filereadex;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.ActionBarActivity;
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-
+import android.view.View;
 import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
+
+    public static final String IS_READ = "org.team100.scouting.IS_READ";
+    public static final int READ_WRITE_ACTIVITY_REQUEST_CODE = 0;
+    public static final String MATCHES = "org.team100.scouting.MATCHES";
+
+    private String mMatches = "";
+
+    public void readFile(View view) {
+        Intent readWriteIntent = new Intent(this, ReadWriteActivity.class);
+        readWriteIntent.putExtra(IS_READ, true);
+        startActivityForResult(readWriteIntent, READ_WRITE_ACTIVITY_REQUEST_CODE);
+    }
+
+    public void writeFile(View view) {
+        Intent readWriteIntent = new Intent(this, ReadWriteActivity.class);
+        readWriteIntent.putExtra(IS_READ, false);
+        readWriteIntent.putExtra(MATCHES, mMatches);
+        startActivity(readWriteIntent);
+    }
+
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (resultCode != RESULT_OK) {
+            Toast.makeText(getApplicationContext(), "Activity Result Not Ok!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        switch (requestCode) {
+            case READ_WRITE_ACTIVITY_REQUEST_CODE:
+                mMatches = data.getStringExtra(MATCHES);
+                break;
+            default:
+                break;
+        }
+    }
 
     private static final String TAG = MainActivity.class.getName();
     private static final String FILENAME = "myFile.txt";
@@ -20,7 +55,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        String textToSaveString = "Hello Earth";
+        String textToSaveString = "Team 100";
 
         ReadWriteFile.writeToFile(this, FILENAME, textToSaveString);
 
@@ -36,7 +71,7 @@ public class MainActivity extends ActionBarActivity {
         if ( textToSaveString.equals(textFromFileString) ) {
             Toast.makeText(getApplicationContext(), "both strings are equal", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(getApplicationContext(), "there is a problem", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "oh sh-", Toast.LENGTH_SHORT).show();
         }
     }
 

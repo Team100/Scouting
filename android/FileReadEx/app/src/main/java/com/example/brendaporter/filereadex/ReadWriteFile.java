@@ -8,6 +8,7 @@ import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -31,7 +32,6 @@ public class ReadWriteFile {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(new FileOutputStream(f));
             outputStreamWriter.write(data);
             outputStreamWriter.close();
-
             Boolean exists = f.exists();
             Boolean hidden = f.isHidden();
             String[] files = dir.list();
@@ -58,7 +58,12 @@ public class ReadWriteFile {
         String ret = "";
 
         try {
-            InputStream inputStream = context.openFileInput(filename);
+            File root = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS);
+            File dir = new File(root.getAbsolutePath());
+            dir.mkdirs();
+
+            File f = new File(dir, filename);
+            InputStream inputStream = new FileInputStream(f);
 
             if ( inputStream != null ) {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
