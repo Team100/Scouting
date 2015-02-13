@@ -1,12 +1,15 @@
 package com.example.brendaporter.filereadex;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.Scanner;
 
 
 public class ReadWriteActivity extends ActionBarActivity {
@@ -30,14 +33,33 @@ public class ReadWriteActivity extends ActionBarActivity {
         if (isRead) {
             Toast.makeText(getApplicationContext(), "Read Activity!", Toast.LENGTH_SHORT).show();
             String contents = ReadWriteFile.readFromFile(this, "matches.csv");
-            rwtextview.setText(contents);
-            intent.putExtra(MainActivity.MATCHES, contents);
-            setResult(RESULT_OK, intent);
-        } else {
+            Scanner linescanner = new Scanner(contents);
+
+            String line;
+            while(true){
+                line = linescanner.nextLine();
+                Scanner scanner = new Scanner(line);
+                scanner.useDelimiter(",");
+                String prev = scanner.next();
+                String prev2 = scanner.next();
+                String prev3 = scanner.next();
+                String prev4 = scanner.next();
+                String prev5 = scanner.next();
+                String prev6 = scanner.next();
+                String prev7 = scanner.next();
+                String result = prev + " " + prev2 + " " + prev3 + " " + prev4 + " " + prev5 + " " + prev6 + " " + prev7;
+                rwtextview.setText(result);
+                Log.d("emily", result);
+                intent.putExtra(MainActivity.MATCHES, line);
+                setResult(RESULT_OK, intent);
+                scanner.close();
+            }
+        }
+
+        else {
             Toast.makeText(getApplicationContext(), "Write Activity!", Toast.LENGTH_SHORT).show();
             String contents = rwtextview.getText().toString();
             ReadWriteFile.writeToFile(this, "scouting_out.csv", contents);
-
         }
     }
 
