@@ -1,4 +1,4 @@
-package argvarg.net.datastructuretest;
+package com.example.brendaporter.scoutingdataprealpha;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

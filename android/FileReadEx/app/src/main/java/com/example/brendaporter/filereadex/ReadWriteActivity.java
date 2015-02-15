@@ -33,10 +33,11 @@ public class ReadWriteActivity extends ActionBarActivity {
         if (isRead) {
             Toast.makeText(getApplicationContext(), "Read Activity!", Toast.LENGTH_SHORT).show();
             String contents = ReadWriteFile.readFromFile(this, "matches.csv");
+            Log.d("emily", contents);
             Scanner linescanner = new Scanner(contents);
 
             String line;
-            while(true){
+            while(linescanner.hasNextLine()){
                 line = linescanner.nextLine();
                 Scanner scanner = new Scanner(line);
                 scanner.useDelimiter(",");

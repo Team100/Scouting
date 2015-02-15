@@ -15,10 +15,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.ArrayList;
 
 /**
  * Created by brendaporter on 2/1/15.
  */
+
 public class ReadWriteFile {
     private static final String TAG = ReadWriteFile.class.getName();
 
@@ -64,15 +66,22 @@ public class ReadWriteFile {
 
             File f = new File(dir, filename);
             InputStream inputStream = new FileInputStream(f);
+            Log.d("emily", inputStream.toString());
 
             if ( inputStream != null ) {
                 InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                 String receiveString = "";
                 StringBuilder stringBuilder = new StringBuilder();
+                ArrayList Match = new ArrayList();
+                ArrayList Team = new ArrayList();
 
                 while ( (receiveString = bufferedReader.readLine()) != null ) {
-                    stringBuilder.append(receiveString);
+                    stringBuilder.append(receiveString).append("\n");
+                    Match.add(0, stringBuilder);
+                    for (int i = 0; i < 6; i++) {
+                        Team.add(i, stringBuilder);
+                    }
                 }
 
                 inputStream.close();
