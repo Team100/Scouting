@@ -1,5 +1,8 @@
-package com.example.brendaporter.filereadex;
+package team100.org.scoutingdataprealpha;
 
+/**
+ * Created by brendaporter on 2/14/15.
+ */
 import android.content.Context;
 import android.media.MediaScannerConnection;
 import android.net.Uri;
@@ -73,15 +76,9 @@ public class ReadWriteFile {
                 BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                 String receiveString = "";
                 StringBuilder stringBuilder = new StringBuilder();
-                ArrayList Match = new ArrayList();
-                ArrayList Team = new ArrayList();
 
                 while ( (receiveString = bufferedReader.readLine()) != null ) {
                     stringBuilder.append(receiveString).append("\n");
-                    Match.add(0, stringBuilder);
-                    for (int i = 0; i < 6; i++) {
-                        Team.add(i, stringBuilder);
-                    }
                 }
 
                 inputStream.close();

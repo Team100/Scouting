@@ -1,5 +1,8 @@
-package com.example.brendaporter.filereadex;
+package team100.org.scoutingdataprealpha;
 
+/**
+ * Created by brendaporter on 2/14/15.
+ */
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -8,8 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Scanner;
 
 
 public class ReadWriteActivity extends ActionBarActivity {
@@ -34,27 +35,14 @@ public class ReadWriteActivity extends ActionBarActivity {
             Toast.makeText(getApplicationContext(), "Read Activity!", Toast.LENGTH_SHORT).show();
             String contents = ReadWriteFile.readFromFile(this, "matches.csv");
             Log.d("emily", contents);
-            Scanner linescanner = new Scanner(contents);
-
-            String line;
-            while(linescanner.hasNextLine()){
-                line = linescanner.nextLine();
-                Scanner scanner = new Scanner(line);
-                scanner.useDelimiter(",");
-                String prev = scanner.next();
-                String prev2 = scanner.next();
-                String prev3 = scanner.next();
-                String prev4 = scanner.next();
-                String prev5 = scanner.next();
-                String prev6 = scanner.next();
-                String prev7 = scanner.next();
-                String result = prev + " " + prev2 + " " + prev3 + " " + prev4 + " " + prev5 + " " + prev6 + " " + prev7;
-                rwtextview.setText(result);
-                Log.d("emily", result);
-                intent.putExtra(MainActivity.MATCHES, line);
-                setResult(RESULT_OK, intent);
-                scanner.close();
-            }
+            MatchCSVParser parser = new MatchCSVParser();
+            parser.parseMatches(contents);
+            String result = "";
+            result += "Matches: " + parser.getMatches().toString() + "\n";
+            result += "Teams: " + parser.getTeams().toString() + "\n";
+            rwtextview.setText(result);
+            Log.d("emily", result);
+            setResult(RESULT_OK, intent);
         }
 
         else {
