@@ -4,27 +4,34 @@ package team100.org.scoutingdataprealpha;
  * Created by brendaporter on 2/14/15.
  */
 public class PerMatchData {
-    private boolean mGotNoodle;
-    private int mMatchNum;
-    private int mTeamNum;
+    private boolean mLitter;
+    private Match mMatch;
+    private Team mTeam;
 
-    public PerMatchData(int teamNum, int matchNum) {
-
+    public PerMatchData(Team team, Match match) {
+        mLitter = false;
+        mMatch = match;
+        mTeam = team;
     }
 
-    public int getmMatchNum() {
-        return mMatchNum;
+    public Match getMatch() {
+        return mMatch;
     }
 
-    public int getmTeamNum() {
-        return mTeamNum;
+    public Team getTeam() {
+        return mTeam;
     }
 
-    public boolean ismGotNoodle() {
-        return mGotNoodle;
+    public boolean hasLitter() {
+        return mLitter;
     }
 
-    public void setmGotNoodle(boolean mGotNoodle) {
-        this.mGotNoodle = mGotNoodle;
+    public void setGotNoodle(boolean litter) {
+        this.mLitter = litter;
+    }
+
+    public String toString() {
+        return "{TeamId: " + mTeam.getTeamID() + ", MatchId: " + mMatch.getMatchID() +
+                ", Litter: " + mLitter + "}";
     }
 }
